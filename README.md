@@ -3,7 +3,7 @@
 ## 前言
 项目中的前端都是自己设计的包括UI所以花了蛮多时间，没有套用模板，设计的不合理可能也很正常哈哈，我就是想多练练前端而已，虽然我学的是后端，但我觉得后端工程师对前端也要有一定的了解，不能只是简单了解前端
 ## 技术介绍
-前端： "vue" + "pinia" + "vue-router" + "axios" + "vuetify" + "element-plus" + "javascript"
+前端： "vue" + "pinia" + "vue-router" + "axios" + "vuetify" + "element-plus" + "javascript"  
 后端： "SpringBoot" + "SpringSecurity" + "Swagger2" + "MyBatisPlus" + "Mysql" + "Redis" + "rabbitMQ"
 ## 效果图演示
 
