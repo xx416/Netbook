@@ -4,7 +4,8 @@
 项目中的前端都是自己设计的包括UI所以花了蛮多时间，没有套用模板，设计的不合理可能也很正常哈哈，我就是想多练练前端而已，虽然我学的是后端，但我觉得后端人员对前端也要有一定的理解，不能只是简单了解前端
 ## 技术介绍
 前端： "vue" + "pinia" + "vue-router" + "axios" + "vuetify" + "element-plus" + "javascript"  
-后端： "SpringBoot" + "SpringSecurity" + "Swagger2" + "MyBatisPlus" + "Mysql" + "Redis" + "rabbitMQ"
+后端： "SpringBoot" + "SpringSecurity" + "Swagger2" + "MyBatisPlus" + "Mysql" + "Redis" + "rabbitMQ"  
+JWT登录、Redis+MQ邮件验证码、防恶意访问限流操作、Redis+MQ下单系统、AOP系统日志、文件上传
 ## 效果图演示
 ### 登录页面  
 ![登录页面](https://github.com/xx416/Netbook/blob/e0cdc35dcb909c9cc67f05298c7043b621d0cdeb/%E6%95%88%E6%9E%9C%E5%9B%BE/%E7%99%BB%E5%BD%95%E5%95%86%E5%9F%8E%E9%A1%B5%E9%9D%A2.PNG)
