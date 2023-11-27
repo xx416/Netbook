@@ -24,3 +24,10 @@
 ![个人中心](https://github.com/xx416/Netbook/blob/4001f0a1d58ad957b8bbc0e5a519a971e446e894/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG)
 ### 后台登录页面
 ![后台登录](https://github.com/xx416/Netbook/blob/5ade4864a1aaa47e8d08105b34b736a05194c537/%E6%95%88%E6%9E%9C%E5%9B%BE/%E5%90%8E%E5%8F%B0%E7%99%BB%E5%BD%95.PNG)
+### 后台页面
+![后台页面](https://github.com/xx416/Netbook/blob/40cca81146418427883f37cc40dd0ef230f1731c/%E6%95%88%E6%9E%9C%E5%9B%BE/%E5%90%8E%E5%8F%B0%E9%A1%B5%E9%9D%A2.PNG)
+### 添加商品
+![添加商品](https://github.com/xx416/Netbook/blob/40cca81146418427883f37cc40dd0ef230f1731c/%E6%95%88%E6%9E%9C%E5%9B%BE/%E6%B7%BB%E5%8A%A0%E5%95%86%E5%93%81.PNG)
+### 系统日志
+![系统日志](https://github.com/xx416/Netbook/blob/40cca81146418427883f37cc40dd0ef230f1731c/%E6%95%88%E6%9E%9C%E5%9B%BE/%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97.PNG)
+
