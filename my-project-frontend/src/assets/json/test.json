@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "book_name": "神奇的书",
+    "price": 120,
+    "img":"/bookimg/book1.jpeg",
+    "author": "未知",
+    "sales": 20,
+    "stock": 320,
+    "press": "未知",
+    "transit": 0,
+    "addTime": "",
+    "info":"详情介绍"
+  },
+  {
+    "id": 2,
+    "book_name": "猫书",
+    "price": 200,
+    "img":"/bookimg/book2.jpeg",
+    "author": "未知",
+    "sales": 999,
+    "stock": 222,
+    "press": "未知",
+    "transit": 0,
+    "addTime": "",
+    "info":"详情介绍"
+  }
+]

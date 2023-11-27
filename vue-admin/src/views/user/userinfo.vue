@@ -1,0 +1,394 @@
+<template>
+  <div>
+    <div class="common-layout">
+      <el-container>
+        <el-header>用户管理</el-header>
+        <el-main>
+          <el-row>
+            <el-col>
+              <el-form-item label="关键字:">
+                <el-input v-model="selectValue" style="width: 200px" placeholder="分类名称"></el-input>
+                <el-button type="primary" style="margin-left: 15px" @click="select()">搜索</el-button>
+                <el-button type="primary" style="margin-left: 15px" @click="add()">+ 添加商品</el-button>
+                <el-button type="danger" style="margin-left: 15px" @click="del()">删除</el-button>
+              </el-form-item>
+            </el-col>
+            <el-col>
+              <el-table
+                  :data="tableList"
+                  max-height="1000px"
+                  @selection-change="handleSelectionChange"
+                  border
+                  style="width: 100%"
+              >
+                <el-table-column type="selection" width="55"/>
+                <el-table-column align="center" prop="userId" label="编号"/>
+                <el-table-column align="center" prop="username" label="用户名"/>
+                <el-table-column align="center" prop="email" label="邮箱"/>
+                <el-table-column align="center" prop="sex" label="性别">
+                  <template #default="scope">
+                    <span v-if="scope.row.sex">男</span>
+                    <span v-else>女</span>
+                  </template>
+                </el-table-column>
+                <el-table-column align="center" prop="icon" label="头像">
+                  <template #default="scope">
+                    <el-image
+                        :preview-src-list="[`${baseURL}${scope.row.icon}`]"
+                        :hide-on-click-modal="true"
+                        :preview-teleported="true"
+                        :src="`${baseURL}${scope.row.icon}`"
+                        style="width:40px;height: 40px"
+                    ></el-image>
+                  </template>
+                </el-table-column>
+                <el-table-column align="center" prop="state" label="账户状态">
+                  <template #default="scpoe">
+                    <span v-if="scpoe.row.state">正常</span>
+                    <span v-else style="color: red">封禁</span>
+                  </template>
+                </el-table-column>
+                <el-table-column align="center" prop="role" label="权限等级"/>
+                <el-table-column align="center" prop="regtime" label="注册时间"/>
+                <el-table-column align="center" fixed="right" label="操作" width="120">
+                  <template #default="scope">
+                    <el-button link type="primary" size="small" @click="info(scope.row)">详细</el-button>
+                    <el-button link type="primary" size="small" @click="edit(scope.row)">修改</el-button>
+                  </template>
+                </el-table-column>
+              </el-table>
+            </el-col>
+          </el-row>
+          <el-col style="margin-top: 20px">
+            <el-pagination
+                background
+                layout="prev, pager, next"
+                v-model:current-page.sync="formRef.currentPage"
+                :total="formRef.totalCount"
+                :page-size="formRef.pageSize"
+                :page-count="formRef.pageCount"
+            />
+          </el-col>
+        </el-main>
+      </el-container>
+
+      <!--      ----------------------------------------------------------弹窗----------------------------------------------------------      -->
+      <el-dialog v-model="dialogFormVisible" title="添加商品">
+        <el-form
+            :model="form"
+            :rules="rule"
+            :disabled="form.disabled"
+        >
+          <el-form-item v-if="form.isEdit" label="编号:" :label-width="formLabelWidth" prop="isNotNull">
+            <el-input v-model="form.userId" autocomplete="off" disabled/>
+          </el-form-item>
+          <el-form-item label="用户名:" :label-width="formLabelWidth" prop="isNotNull">
+            <el-input v-model="form.username" autocomplete="off"/>
+          </el-form-item>
+          <el-form-item label="密码:" :label-width="formLabelWidth" prop="isNotNull">
+            <el-input v-model="form.password" autocomplete="off" show-password/>
+          </el-form-item>
+          <el-form-item label="性别:" :label-width="formLabelWidth" prop="isNotNull">
+            <el-select
+                v-model="form.sex"
+                placeholder="性别"
+                style="width: 240px"
+            >
+              <el-option
+                  v-for="item in options"
+                  :label="item.sex"
+                  :value="item.value"
+              />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="邮箱:" :label-width="formLabelWidth" prop="isNotNull">
+            <el-input v-model="form.email" autocomplete="off"/>
+          </el-form-item>
+          <el-form-item label="状态:" :label-width="formLabelWidth" prop="isNotNull">
+            <el-select
+                v-model="form.state"
+                placeholder="性别"
+                style="width: 240px"
+            >
+              <el-option
+                  v-for="item in stateList"
+                  :label="item.name"
+                  :value="item.value"
+              />
+            </el-select>
+          </el-form-item>
+          <el-form-item v-if="form.isEdit" label="注册时间:" :label-width="formLabelWidth" prop="isNotNull">
+            <el-input v-model="form.regtime" autocomplete="off" disabled/>
+          </el-form-item>
+          <el-form-item label="备注:" :label-width="formLabelWidth" prop="isNotNull">
+            <el-input v-model="form.remark" autocomplete="off"/>
+          </el-form-item>
+          <el-form-item label="头像:" :label-width="formLabelWidth" prop="isNotNull">
+            <el-upload
+                v-model:file-list="fileList"
+                class="upload-demo"
+                action="#"
+                :http-request="uploadFile"
+                :limit="1"
+                :on-exceed="handleExceed"
+                :before-upload="beforeUpload"
+                :on-success="handleSuccess"
+            >
+              <el-button type="primary">上传文件</el-button>
+              <template #tip>
+                上传限制5MB(JPG)
+              </template>
+            </el-upload>
+          </el-form-item>
+        </el-form>
+        <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="off()">取消</el-button>
+        <el-button v-if="form.isEdit === false" type="primary" @click="onSubmit()">提交</el-button>
+        <el-button v-else type="primary" @click="update()">修改</el-button>
+      </span>
+        </template>
+      </el-dialog>
+      <!--      ----------------------------------------------------------弹窗end----------------------------------------------------------      -->
+    </div>
+  </div>
+</template>
+
+<script setup>
+import {onMounted, reactive, ref, watch} from "vue";
+import {ElMessage, ElMessageBox} from "element-plus";
+import {postUploadFile} from "@/net/person";
+import {getPageList,getPagination,removeById,save,updateById} from "@/net/user";
+
+const baseURL = "http://192.168.0.124:8080"
+const dialogFormVisible = ref(false)
+const formLabelWidth = '100px'
+const multipleSelection = ref([])
+const selectValue = ref('')// 搜索字段
+const tableList = ref([])//列表数据
+const formRef = ref({
+  // 显示第几页 （可修改）
+  currentPage: 1,
+  // 默认每页显示的条数（可修改）
+  pageSize: 15,
+  // 总数据 (数据库获取)
+  tableData: null,
+  // 总条数，根据接口获取数据长度(注意：这里不能为空)  (数据库获取)
+  totalCount: null,
+  // 总页数 (数据库返回)
+  pageCount: null,
+})
+
+//表单验证
+const rule = reactive({
+  isNotNull: [{required: true, message: '必填项', trigger: 'blur'}]
+})
+
+onMounted(() => {
+  const pageSize = formRef.value.pageSize
+  getPagination({pageSize}).then(res => {//获取分页信息
+    formRef.value.pageCount = res.data.data.pageCount
+    formRef.value.tableData = res.data.data.tableData
+    formRef.value.totalCount = res.data.data.totalCount
+    const currentPage = formRef.value.currentPage
+    const tagName = ''
+    getPageList({pageSize, currentPage, tagName}).then(res => {//获取图书信息
+      tableList.value = res.data.data
+    })
+  })
+})
+//分类标签列表
+const options = ref([
+  {sex:'男',value:1},{sex:'女',value:0}
+])
+const stateList = ref([
+  {name:'启用',value:1},{name:'禁用',value:0}
+])
+const pressList = ref([])//出版社列表
+
+const form = ref({
+  userId: '',
+  username: '',
+  password: '',
+  icon: '',
+  regtime: '',
+  sex: '',
+  state: '',
+  email: '',
+  role: '',
+  remark: '',
+  file: null,
+  isEdit: false,
+  disabled: false
+})
+
+const handleSelectionChange = (val) => {
+  multipleSelection.value = val
+}
+
+const select = () => {
+  const pageSize = formRef.value.pageSize
+  const currentPage = formRef.value.currentPage
+  const tagName = selectValue.value
+  getPageList({pageSize, currentPage, tagName}).then(res => {//获取图书信息
+    tableList.value = res.data.data
+  })
+}
+
+watch(formRef.value,() =>{
+  tableList.value = []
+  const pageSize = formRef.value.pageSize;
+  const currentPage = formRef.value.currentPage;
+  const tagName = selectValue.value;
+  getPageList({pageSize,currentPage,tagName}).then(res =>{
+    tableList.value = res.data.data
+  })
+})
+const add = () => {
+  dialogFormVisible.value = true
+
+}
+const del = () => {
+  if (multipleSelection.value.length > 0) {
+    ElMessageBox.confirm(
+        '确定删除数据吗?',
+        '提醒：',
+        {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+        }
+    ).then(() => {
+      multipleSelection.value.forEach((item) => {
+        const id = item.bannerId
+        removeById({id}).then(res => {
+          if (res.status === 200) {
+            select()
+            ElMessage({
+              type: 'success',
+              message: '删除成功',
+            })
+          }else {
+            ElMessage({
+              type: 'info',
+              message: '删除失败，请联系管理员',
+            })
+          }
+        })
+      })
+    }).catch(() => {
+      ElMessage({
+        type: 'info',
+        message: '删除失败，请联系管理员',
+      })
+    })
+  } else {
+    ElMessage.warning('请选中数据行!')
+  }
+}
+const edit = (object) => {
+  form.value.isEdit = true
+  dialogFormVisible.value = true
+  form.value.userId = object.userId
+  form.value.username = object.username
+  form.value.password = object.password
+  form.value.icon = object.icon
+  form.value.regtime = object.regtime
+  form.value.sex = object.sex
+  form.value.state = object.state
+  form.value.email = object.email
+  form.value.role = object.role
+  form.value.remark = object.remark
+}
+
+const info = (object) => {
+  form.value.disabled = true
+  dialogFormVisible.value = true
+  edit(object)
+}
+
+const off = () => {
+  dialogFormVisible.value = false
+  history.go(0)
+}
+const onSubmit = () => {
+  if (form.value.password === '' || form.value.username === '') {
+    ElMessage.warning('请填写完整信息!!!')
+    return null;
+  } else {
+    let formData = new FormData();
+    formData.append('file', form.value.file)
+    postUploadFile(formData).then(res => {
+      if (res.status == 200) {
+        form.value.icon = res.data
+        save(form.value).then(res => {
+          console.log(res)
+          dialogFormVisible.value = false
+          history.go(0)
+        })
+      } else {
+        ElMessage.error('封面上传失败，请联系管理员')
+        dialogFormVisible.value = false
+        history.go(0)
+      }
+    })
+  }
+}
+
+const update = () =>{
+  if (form.value.file === '' || form.value.bookName === '') {
+    ElMessage.warning('请填写完整信息!!!')
+    return null;
+  } else {
+    let formData = new FormData();
+    formData.append('file', form.value.file)
+    postUploadFile(formData).then(res => {
+      if (res.data != "图片上传失败！"){
+        form.value.icon = res.data
+      }
+      updateById(form.value).then(res => {
+        console.log(res)
+        dialogFormVisible.value = false
+        history.go(0)
+      })
+    })
+  }
+}
+
+const fileList = ref([])
+const uploadFile = (file) => {
+  form.value.file = file.file
+}
+
+const handleExceed = () => {
+  ElMessage.warning('文件数量超出最大限制')
+}
+
+const handleSuccess = () => {
+  dialogFormVisible.value = false
+}
+
+const beforeUpload = (file) => {
+  const isJPG = file.type === 'image/jpeg';
+  const isLT5M = file.size / 1024 / 1024 < 5;
+  if (!isJPG) {
+    ElMessage.warning('上传图片只能是JPG格式')
+  }
+  if (!isLT5M) {
+    ElMessage.warning('上传的图片大小不能超过5MB')
+  }
+  return isJPG && isLT5M;
+}
+
+
+</script>
+
+<style scoped>
+.myNote {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+</style>
