@@ -6,7 +6,7 @@
 前端： "vue" + "pinia" + "vue-router" + "axios" + "vuetify" + "element-plus" + "javascript"  
 后端： "SpringBoot" + "SpringSecurity" + "Swagger2" + "MyBatisPlus" + "Mysql" + "Redis" + "rabbitMQ"
 ## 效果图演示
-登录页面  
+*登录页面*  
 ![登录页面](https://github.com/xx416/Netbook/blob/e0cdc35dcb909c9cc67f05298c7043b621d0cdeb/%E6%95%88%E6%9E%9C%E5%9B%BE/%E7%99%BB%E5%BD%95%E5%95%86%E5%9F%8E%E9%A1%B5%E9%9D%A2.PNG)
 注册页面  
 ![注册页面](https://github.com/xx416/Netbook/blob/e0cdc35dcb909c9cc67f05298c7043b621d0cdeb/%E6%95%88%E6%9E%9C%E5%9B%BE/%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.PNG)
