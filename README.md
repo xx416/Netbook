@@ -7,4 +7,4 @@
 后端： "SpringBoot" + "SpringSecurity" + "Swagger2" + "MyBatisPlus" + "Mysql" + "Redis" + "rabbitMQ"
 ## 效果图演示
 
-![image] (https://github.com/xx416/Netbook/blob/master/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG?raw=true)
+![image] (效果图/个人中心.PNG)
