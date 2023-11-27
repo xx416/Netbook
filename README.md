@@ -6,4 +6,12 @@
 前端： "vue" + "pinia" + "vue-router" + "axios" + "vuetify" + "element-plus" + "javascript"  
 后端： "SpringBoot" + "SpringSecurity" + "Swagger2" + "MyBatisPlus" + "Mysql" + "Redis" + "rabbitMQ"
 ## 效果图演示
+![商城主页面](https://github.com/xx416/Netbook/blob/8e1ce155d998fa25ea19709e923551cc609034a9/%E6%95%88%E6%9E%9C%E5%9B%BE/%E5%95%86%E5%9F%8E%E4%B8%BB%E9%A1%B5%E9%9D%A2.PNG)
+![image](https://github.com/xx416/Netbook/blob/4001f0a1d58ad957b8bbc0e5a519a971e446e894/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG)
+![image](https://github.com/xx416/Netbook/blob/4001f0a1d58ad957b8bbc0e5a519a971e446e894/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG)
+![image](https://github.com/xx416/Netbook/blob/4001f0a1d58ad957b8bbc0e5a519a971e446e894/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG)
+![image](https://github.com/xx416/Netbook/blob/4001f0a1d58ad957b8bbc0e5a519a971e446e894/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG)
+![image](https://github.com/xx416/Netbook/blob/4001f0a1d58ad957b8bbc0e5a519a971e446e894/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG)
+![image](https://github.com/xx416/Netbook/blob/4001f0a1d58ad957b8bbc0e5a519a971e446e894/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG)
+![image](https://github.com/xx416/Netbook/blob/4001f0a1d58ad957b8bbc0e5a519a971e446e894/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG)
 ![image](https://github.com/xx416/Netbook/blob/4001f0a1d58ad957b8bbc0e5a519a971e446e894/%E6%95%88%E6%9E%9C%E5%9B%BE/%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83.PNG)
