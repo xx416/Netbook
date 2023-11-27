@@ -1,9 +1,8 @@
 package com.xiong.myprojectbackend.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.xiong.myprojectbackend.entity.RestBean;
-import com.xiong.myprojectbackend.entity.dto.DbBook;
+import com.xiong.myprojectbackend.entity.po.DbBook;
 import com.xiong.myprojectbackend.entity.vo.response.PaginationVO;
 import com.xiong.myprojectbackend.entity.vo.resquest.SelectPageVO;
 import com.xiong.myprojectbackend.service.DbBookService;

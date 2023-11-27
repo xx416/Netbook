@@ -4,15 +4,13 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xiong.myprojectbackend.entity.dto.DbBook;
+import com.xiong.myprojectbackend.entity.po.DbBook;
 import com.xiong.myprojectbackend.entity.vo.response.PaginationVO;
 import com.xiong.myprojectbackend.entity.vo.resquest.SelectPageVO;
 import com.xiong.myprojectbackend.service.DbBookService;
 import com.xiong.myprojectbackend.mapper.DbBookMapper;
 import jakarta.annotation.Resource;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 

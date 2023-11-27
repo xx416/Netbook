@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xiong.myprojectbackend.Utils.Const;
 import com.xiong.myprojectbackend.Utils.FlowUtils;
 import com.xiong.myprojectbackend.Utils.TimeUtils;
-import com.xiong.myprojectbackend.entity.dto.*;
+import com.xiong.myprojectbackend.entity.po.*;
 import com.xiong.myprojectbackend.entity.vo.response.PaginationVO;
 import com.xiong.myprojectbackend.entity.vo.resquest.ConfirmResetVO;
 import com.xiong.myprojectbackend.entity.vo.resquest.EmailRegisterVO;

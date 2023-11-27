@@ -2,8 +2,7 @@ package com.xiong.myprojectbackend.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.xiong.myprojectbackend.entity.dto.DbNews;
-import com.xiong.myprojectbackend.entity.dto.DbOrder;
+import com.xiong.myprojectbackend.entity.po.DbOrder;
 import com.xiong.myprojectbackend.entity.vo.response.PaginationVO;
 import com.xiong.myprojectbackend.entity.vo.resquest.SelectPageVO;
 

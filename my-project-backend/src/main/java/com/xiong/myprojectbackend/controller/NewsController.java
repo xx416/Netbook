@@ -2,8 +2,7 @@ package com.xiong.myprojectbackend.controller;
 
 import com.xiong.myprojectbackend.Utils.TimeUtils;
 import com.xiong.myprojectbackend.entity.RestBean;
-import com.xiong.myprojectbackend.entity.dto.DbBook;
-import com.xiong.myprojectbackend.entity.dto.DbNews;
+import com.xiong.myprojectbackend.entity.po.DbNews;
 import com.xiong.myprojectbackend.entity.vo.response.PaginationVO;
 import com.xiong.myprojectbackend.entity.vo.resquest.SelectPageVO;
 import com.xiong.myprojectbackend.service.DbNewsService;

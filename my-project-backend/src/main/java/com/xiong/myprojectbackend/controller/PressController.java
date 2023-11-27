@@ -1,8 +1,7 @@
 package com.xiong.myprojectbackend.controller;
 
 import com.xiong.myprojectbackend.entity.RestBean;
-import com.xiong.myprojectbackend.entity.dto.DbOrder;
-import com.xiong.myprojectbackend.entity.dto.DbPress;
+import com.xiong.myprojectbackend.entity.po.DbPress;
 import com.xiong.myprojectbackend.entity.vo.response.PaginationVO;
 import com.xiong.myprojectbackend.entity.vo.resquest.SelectPageVO;
 import com.xiong.myprojectbackend.service.DbPressService;

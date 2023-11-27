@@ -1,7 +1,7 @@
 package com.xiong.myprojectbackend.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.xiong.myprojectbackend.entity.dto.DbCard;
+import com.xiong.myprojectbackend.entity.po.DbCard;
 
 /**
 * @author 10371

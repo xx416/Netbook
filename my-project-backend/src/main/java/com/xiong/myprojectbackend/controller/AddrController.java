@@ -3,7 +3,7 @@ package com.xiong.myprojectbackend.controller;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.xiong.myprojectbackend.Utils.JwtUtil;
 import com.xiong.myprojectbackend.entity.RestBean;
-import com.xiong.myprojectbackend.entity.dto.DbAddr;
+import com.xiong.myprojectbackend.entity.po.DbAddr;
 import com.xiong.myprojectbackend.service.DbAddrService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;

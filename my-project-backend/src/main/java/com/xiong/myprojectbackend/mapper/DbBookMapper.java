@@ -2,8 +2,7 @@ package com.xiong.myprojectbackend.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xiong.myprojectbackend.entity.dto.DbBook;
-import org.apache.ibatis.annotations.Select;
+import com.xiong.myprojectbackend.entity.po.DbBook;
 
 /**
 * @author 10371

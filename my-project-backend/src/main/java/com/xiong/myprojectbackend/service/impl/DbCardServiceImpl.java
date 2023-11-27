@@ -3,7 +3,7 @@ package com.xiong.myprojectbackend.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xiong.myprojectbackend.entity.dto.DbCard;
+import com.xiong.myprojectbackend.entity.po.DbCard;
 import com.xiong.myprojectbackend.mapper.DbCardMapper;
 import com.xiong.myprojectbackend.service.DbCardService;
 import jakarta.annotation.Resource;

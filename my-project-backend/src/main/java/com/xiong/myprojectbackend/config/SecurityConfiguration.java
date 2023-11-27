@@ -2,7 +2,7 @@ package com.xiong.myprojectbackend.config;
 
 import com.xiong.myprojectbackend.Utils.JwtUtil;
 import com.xiong.myprojectbackend.entity.RestBean;
-import com.xiong.myprojectbackend.entity.dto.DbUser;
+import com.xiong.myprojectbackend.entity.po.DbUser;
 import com.xiong.myprojectbackend.entity.vo.response.AuthorizeVO;
 import com.xiong.myprojectbackend.filter.JwtAuthorizeFilter;
 import com.xiong.myprojectbackend.service.DbUserService;
@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.Authentication;

@@ -1,12 +1,10 @@
 package com.xiong.myprojectbackend.controller;
 
 import com.xiong.myprojectbackend.entity.RestBean;
-import com.xiong.myprojectbackend.entity.dto.DbNews;
-import com.xiong.myprojectbackend.entity.dto.DbTag;
+import com.xiong.myprojectbackend.entity.po.DbTag;
 import com.xiong.myprojectbackend.entity.vo.response.PaginationVO;
 import com.xiong.myprojectbackend.entity.vo.resquest.SelectPageVO;
 import com.xiong.myprojectbackend.service.DbTagService;
-import com.xiong.myprojectbackend.service.impl.DbTagServiceImpl;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

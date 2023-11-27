@@ -1,7 +1,7 @@
 package com.xiong.myprojectbackend.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xiong.myprojectbackend.entity.dto.DbTag;
+import com.xiong.myprojectbackend.entity.po.DbTag;
 
 /**
 * @author 10371

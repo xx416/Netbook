@@ -1,8 +1,7 @@
 package com.xiong.myprojectbackend.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.github.yulichang.base.MPJBaseMapper;
-import com.xiong.myprojectbackend.entity.dto.DbOrder;
+import com.xiong.myprojectbackend.entity.po.DbOrder;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;

@@ -2,7 +2,7 @@
   <div>
     <div class="common-layout">
       <el-container>
-        <el-header>标签管理</el-header>
+        <el-header>系统日志</el-header>
         <el-main>
           <el-row>
             <el-col>
