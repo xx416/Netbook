@@ -46,7 +46,6 @@ public class DbOrderServiceImpl extends ServiceImpl<DbOrderMapper, DbOrder> impl
 
     @Override
     public boolean confirmOrder(DbOrder dbOrder) throws JsonProcessingException {
-        //todo 校验入参和库存
         Map<String, Object> goodsMap = redisCache.getCacheMap("goods");//获取商品库存信息
         //同步锁
         synchronized (this){

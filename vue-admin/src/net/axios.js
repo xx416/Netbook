@@ -1,6 +1,5 @@
 import axios from 'axios'
-import {accessHeader, takeAccessToken} from "@/net/index";
-import {ElMessage} from "element-plus";
+import {takeAccessToken} from "@/net/index";
 const instance = axios.create({
     baseURL: 'http://192.168.0.124:8080/api',
     timeout: 6000,

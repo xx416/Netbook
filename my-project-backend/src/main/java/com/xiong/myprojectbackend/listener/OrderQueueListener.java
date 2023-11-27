@@ -33,7 +33,6 @@ public class OrderQueueListener {
 
     @RabbitHandler
     public void review(Map<String, Object> msg, Message message, Channel channel) throws IOException {
-        //todo 同步数据库
         DbOrder order = (DbOrder) msg.get("order");//获取订单信息
         DbBook one = dbBookService.getOne(new QueryWrapper<DbBook>().eq("book_id", order.getBookId()));
         UpdateWrapper<DbBook> wrapper = new UpdateWrapper<>();//配置条件
